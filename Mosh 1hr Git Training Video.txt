@@ -1,0 +1,558 @@
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace
+$ cd Moon
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon
+$ git init
+Initialized empty Git repository in C:/AnypointStudio-7.9.0/workspace/Moon/.git/
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ ls
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ open .git
+bash: open: command not found
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo hello > file1.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo hello again > file2.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git add .
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in file2.txt.
+The file will have its original line endings in your working directory
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo world >> file.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo world >> file1.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git add .
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git commit -m "Initial commit."
+[master (root-commit) b1cd17e] Initial commit.
+ 2 files changed, 3 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ rm file2.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ ls
+file1.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git ls-files
+file1.txt
+file2.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git add file2.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file2.txt
+
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git commit -m "remove unused code"
+[master 8690093] remove unused code
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 file2.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git ls-files
+file1.txt
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ mv file.txt main.js
+mv: cannot stat 'file.txt': No such file or directory
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ mv file1.txt main.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        main.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git add .
+warning: LF will be replaced by CRLF in main.js.
+The file will have its original line endings in your working directory
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    file1.txt -> main.js
+
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git mv main.js file1.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    file1.txt -> file1.js
+
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git commit -m "Refactor code."
+[master c48586c] Refactor code.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename file1.txt => file1.js (100%)
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ mkdir logs
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo hello > logs/dev.log
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        logs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo logs/ > .gitignore
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ code .gitignore
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git add .gitignore
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git commit -m "Add gitignore"
+[master 0cbccb2] Add gitignore
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo world >> logs/dev.log
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status -s
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo sky >> file1.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ echo sky > file2.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status -s
+ M file1.js
+?? file2.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git add file1.js
+warning: LF will be replaced by CRLF in file1.js.
+The file will have its original line endings in your working directory
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status -s
+M  file1.js
+?? file2.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git add file2.js
+warning: LF will be replaced by CRLF in file2.js.
+The file will have its original line endings in your working directory
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git status -s
+M  file1.js
+A  file2.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git --diff staging
+unknown option: --diff
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git diff --staging
+error: invalid option: --staging
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git diff --staged
+diff --git a/file1.js b/file1.js
+index 94954ab..8c55e9c 100644
+--- a/file1.js
++++ b/file1.js
+@@ -1,2 +1,3 @@
+ hello
+ world
++sky
+diff --git a/file2.js b/file2.js
+new file mode 100644
+index 0000000..f5e95e7
+--- /dev/null
++++ b/file2.js
+@@ -0,0 +1 @@
++sky
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git diff
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git config --global diff.tool vscode
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git config --global -e
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git diff
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git difftool
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git difftool --staged
+
+Viewing (1/2): 'file1.js'
+Launch 'vscode' [Y/n]? y
+
+Viewing (2/2): 'file2.js'
+Launch 'vscode' [Y/n]? y
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git log
+commit 0cbccb2637d6587ea229878a41fd36c58927b316 (HEAD -> master)
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:38:04 2021 +1000
+
+    Add gitignore
+
+commit c48586c54cc21aed2292f0a50b274a16291c345b
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:34:11 2021 +1000
+
+    Refactor code.
+
+commit 86900935a3922cd91cf36163df7d855b05733f44
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:29:28 2021 +1000
+
+    remove unused code
+
+commit b1cd17e21d42c3644d112c2027acc325776e265a
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:13:27 2021 +1000
+
+    Initial commit.
+:...skipping...
+commit 0cbccb2637d6587ea229878a41fd36c58927b316 (HEAD -> master)
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:38:04 2021 +1000
+
+    Add gitignore
+
+commit c48586c54cc21aed2292f0a50b274a16291c345b
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:34:11 2021 +1000
+
+    Refactor code.
+
+commit 86900935a3922cd91cf36163df7d855b05733f44
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:29:28 2021 +1000
+
+    remove unused code
+
+commit b1cd17e21d42c3644d112c2027acc325776e265a
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:13:27 2021 +1000
+
+    Initial commit.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git log --oneline
+0cbccb2 (HEAD -> master) Add gitignore
+c48586c Refactor code.
+8690093 remove unused code
+b1cd17e Initial commit.
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git log --oneline --reverse
+b1cd17e Initial commit.
+8690093 remove unused code
+c48586c Refactor code.
+0cbccb2 (HEAD -> master) Add gitignore
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show b1cd17e
+commit b1cd17e21d42c3644d112c2027acc325776e265a
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:13:27 2021 +1000
+
+    Initial commit.
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..94954ab
+--- /dev/null
++++ b/file1.txt
+@@ -0,0 +1,2 @@
++hello
++world
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..13ab7f7
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1 @@
++hello again
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show HEAD
+commit 0cbccb2637d6587ea229878a41fd36c58927b316 (HEAD -> master)
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:38:04 2021 +1000
+
+    Add gitignore
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..8432ad3
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++logs/
++main.log
++*.log
+\ No newline at end of file
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show HEAD~1
+commit c48586c54cc21aed2292f0a50b274a16291c345b
+Author: Prasanna Vittal <Prasanna.Vittal@superretailgroup.com>
+Date:   Mon Jun 21 14:34:11 2021 +1000
+
+    Refactor code.
+
+diff --git a/file1.txt b/file1.js
+similarity index 100%
+rename from file1.txt
+rename to file1.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show HEAD~1:.gitignore
+fatal: path '.gitignore' exists on disk, but not in 'HEAD~1'
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show HEAD:.gitignore
+logs/
+main.log
+*.log
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git ls-tree HEAD
+100644 blob 8432ad3ddcd84243030a0bc5f75f74d7e4e6e69a    .gitignore
+100644 blob 94954abda49de8615a048f8d2e64b5de848e27a1    file1.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git ls-tree HEAD~1
+100644 blob 94954abda49de8615a048f8d2e64b5de848e27a1    file1.js
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show 100644
+fatal: ambiguous argument '100644': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show 949
+fatal: ambiguous argument '949': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show 94954
+hello
+world
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$ git show 8432a
+logs/
+main.log
+*.log
+
+225192@L-SRG75431 MINGW64 /c/AnypointStudio-7.9.0/workspace/Moon (master)
+$
