@@ -1,0 +1,34 @@
+1. Take a backup of all the existing files or move the folder to a different subfolder
+
+2. Go to the main folder where you want to create and clone the git repo. Right click and select Git Bash Here
+
+3. git clone git@gitlab.com:super-retail-group/integration/feeds/master-catalog-fileprocess-feed.git
+
+4. ls command to list the folders
+
+5. cd <new folder>
+
+6. git checkout ss-143-master-catalog-external-pim-to-sfcc
+
+7. git status
+
+8. Copy the files from your build to this folder
+
+9. git add .
+
+10. git commit -m "PIM SFTP and new fields"
+
+11. git push
+
+12. Link this folder to Anypoint studio
+----------------------------------------------------
+git clone
+git branch develop
+git checkout develop
+git status
+git add .
+git commit -m ""
+git push
+----------------------
+git remote add origin 
+git push origin develop
